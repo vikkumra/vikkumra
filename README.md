@@ -12,12 +12,12 @@ I'm an aspiring cybersecurity professional, focusing on building practical skill
 </a>
 
 ## Qualifications
-- A-Levels:
+**A-Levels:**
 - Maths A
 - Business A
 - Media B
 
-- GCSE's: (9 total including:)
+**GCSE's: (9 total including)**
 - Maths 8
 - English Language 9
 - Double Award Science 8-8
