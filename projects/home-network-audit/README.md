@@ -1,13 +1,12 @@
-# Home Network Reconnaissance Lab
+# Home Network Audit Lab
 
-# Overview
-I set up a Kali Linux virtual machine and used it to practise core network reconnaissance techniques — first in an isolated lab network, then against my own home network (with full authorisation, as the network owner).
+## Overview
+I set up a Kali Linux virtual machine and used it to practice basic network recon techniques. Beggining in a isolated lab network then against my own personal home network.
 
-## Environment
 - **Hypervisor:** VMware Fusion Pro (Apple Silicon)
 - **Guest OS:** Kali Linux 2026.2 (ARM64)
 - **Host:** MacBook (M3, 8GB RAM)
-- **Tooling:** Nmap 7.99
+
 
 ## Methodology
 
