@@ -8,14 +8,14 @@ I set up a Kali Linux virtual machine and used it to practice basic network reco
 - **Host:** MacBook (M3, 8GB RAM)
 
 
-## Methodology
+## Method
 
 ### 1. Host Discovery (NAT network)
-Initially ran a ping sweep in Fusion's default NAT mode to confirm basic Nmap functionality:
+Initially i ran a ping sweep in Fusion's default NAT mode to confirm basic Nmap functionality:
 
-```
-nmap -sn 192.168.93.0/24
-```
+
+####nmap -sn 192.168.93.0/24
+
 
 This revealed the isolated virtual network Fusion creates by default for VM-to-host communication — useful for understanding the difference between an isolated lab network and a real network before scanning anything live.
 
