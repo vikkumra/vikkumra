@@ -32,13 +32,13 @@ This performed a full port scan.
 
 | Port | State | Service | Notes |
 |------|-------|---------|-------|
-| 22 (SSH) | filtered | — | Silently dropped, not confirmed open or closed |
-| 23 (Telnet) | filtered | — | Legacy, insecure protocol; correctly not exposed |
-| 53 (DNS) | open | dnsmasq 2.83 | Router's internal DNS resolver |
-| 80 (HTTP) | open | "Xfinity Broadband Router Server" | Unencrypted admin interface |
-| 111 (RPC) | filtered | — | Legacy service, correctly hidden |
-| 443 (HTTPS) | open | "Xfinity Broadband Router Server" | Encrypted admin interface |
-| 8080 / 8181 / 9000 | filtered | — | Alternate management ports, not exposed |
+| 22 (SSH) | filtered | — |
+| 23 (Telnet) | filtered | — |
+| 53 (DNS) | open | dnsmasq 2.83 |
+| 80 (HTTP) | open | "Xfinity Broadband Router Server" |
+| 111 (RPC) | filtered | — |
+| 443 (HTTPS) | open | "Xfinity Broadband Router Server" |
+| 8080 / 8181 / 9000 | filtered | — |
 
 ### Key observation
 The router's web server identifies itself as an **"Xfinity Broadband Router Server"**, despite being supplied by a different UK ISP. This strongly suggests the hardware/firmware is **whitelabeled** — manufactured by a single vendor and rebranded for multiple ISPs, with the original server signature left unchanged in the HTTP headers. This kind of inconsistency can be a useful reconnaissance signal in real assessments, since it can reveal the true underlying hardware/software platform even when a device has been rebranded.
