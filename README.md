@@ -12,4 +12,4 @@ I'm an aspiring cybersecurity professional, focusing on building practical skill
 </a>
 
 ## 🌐 Socials:
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/vikram kumra) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:vik.kumra@gmail.com) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](www.linkedin.com/in/vikram-kumra-322480402) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:vik.kumra@gmail.com) 
