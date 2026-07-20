@@ -11,13 +11,9 @@ I set up a Kali Linux virtual machine and used it to practice basic network reco
 ## Method
 
 ### 1. Host Discovery (NAT network)
-Initially i ran a ping sweep in Fusion's default NAT mode to confirm basic Nmap functionality:
+Initially i ran a ping sweep in Fusion's default NAT mode to confirm basic Nmap functionality: nmap -sn 192.xxx.xx.0/24
 
-
-### nmap -sn 192.168.93.0/24
-
-
-This revealed the isolated virtual network Fusion creates by default for VM-to-host communication — useful for understanding the difference between an isolated lab network and a real network before scanning anything live.
+This revealed the isolated virtual network Fusion created by default.
 
 ### 2. Switching to Bridged Mode
 To scan real devices, I switched the VM's network adapter from NAT to **Bridged**, giving Kali its own IP address directly from my home router rather than sitting behind a private virtual network. This is an important distinction: NAT hides a VM from the wider network, while bridged mode makes it a genuine participant on the LAN.
