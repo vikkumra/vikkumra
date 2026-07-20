@@ -41,17 +41,12 @@ This performed a full port scan.
 | 8080 / 8181 / 9000 | filtered | — |
 
 ### Key observation
-The router's web server identifies itself as an **"Xfinity Broadband Router Server"**, despite being supplied by a different UK ISP. This strongly suggests the hardware/firmware is **whitelabeled** — manufactured by a single vendor and rebranded for multiple ISPs, with the original server signature left unchanged in the HTTP headers. This kind of inconsistency can be a useful reconnaissance signal in real assessments, since it can reveal the true underlying hardware/software platform even when a device has been rebranded.
-
-The HTTP response headers also showed several security-conscious configurations already in place, including `Content-Security-Policy`, `X-Frame-Options: deny`, and `Strict-Transport-Security` — indicating the router's admin interface has reasonable baseline web hardening.
+The router's web server identifies itself as an "Xfinity Broadband Router Server", despite being supplied by Sky. This suggests the hardware is possibly whitelabled (manufactured by a single company and rebranded for multiple ISPs), with the original server signature left unchanged. This kind of inconsistency can be a useful information for real assessments, since it can reveal the true underlying hardware platform even if a device has been rebranded.
 
 ## What I learned
-- The practical difference between NAT and bridged VM networking, and when each is appropriate
-- How ARP-based discovery works and why it's more reliable than ICMP ping on a LAN
-- How to interpret Nmap's open/closed/filtered port states
-- How service banners and HTTP headers can reveal information about a device's true origin, even when rebranded
-- The importance of not publishing raw scan data (MAC addresses, hostnames) publicly, even from one's own network
+- The practical difference between NAT and bridged Virtual Machine networking, and when each can be used.
+- How ARP ping works and why it's more reliable than ICMP ping on a LAN.
+- How to interpret Nmap's open/closed/filtered port states.
+- How service banners and HTTP headers can reveal information about a device's origin, even if rebranded.
+- The importance of not publishing raw scan data (MAC addresses, hostnames, IP Addresses) publicly, even from my own network
 
-## Next steps
-- Set up a deliberately vulnerable target VM (e.g., Metasploitable2) on an isolated NAT network to safely practise deeper enumeration and basic exploitation techniques
-- Begin documenting TryHackMe room write-ups alongside this lab work
