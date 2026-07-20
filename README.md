@@ -6,6 +6,7 @@ I'm an aspiring cybersecurity professional, focusing on building practical skill
 
 ## Certifications
 - completed the Google Cybersecurity Certifiaction
+
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="9367f2a1-638d-4824-83e7-16f8c9212aaf" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 ## 🌐 Socials:
