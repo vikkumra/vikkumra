@@ -30,8 +30,8 @@ This performed a full port scan.
 
 ## Findings
 
-| Port | State | Service | Notes |
-|------|-------|---------|-------|
+| Port | State | Service |
+|------|-------|---------|
 | 22 (SSH) | filtered | — |
 | 23 (Telnet) | filtered | — |
 | 53 (DNS) | open | dnsmasq 2.83 |
