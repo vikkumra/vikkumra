@@ -1,7 +1,7 @@
 # Home Network Audit Lab
 
 ## Overview
-I set up a Kali Linux virtual machine and used it to practice basic network recon techniques. Beggining in a isolated lab network then against my own personal home network.
+I set up a Kali Linux virtual machine and used it to practice basic network recon techniques. Beggining in a isolated lab network then against my own personal home network. (i redacted my personal information using 'x')
 
 - **Hypervisor:** VMware Fusion Pro (Apple Silicon)
 - **Guest OS:** Kali Linux 2026.2 (ARM64)
@@ -16,25 +16,17 @@ Initially i ran a ping sweep in Fusion's default NAT mode to confirm basic Nmap 
 This revealed the isolated virtual network Fusion created by default.
 
 ### 2. Switching to Bridged Mode
-To scan real devices, I switched the VM's network adapter from NAT to **Bridged**, giving Kali its own IP address directly from my home router rather than sitting behind a private virtual network. This is an important distinction: NAT hides a VM from the wider network, while bridged mode makes it a genuine participant on the LAN.
+To scan real devices on my network, I switched the VM's network adapter from NAT to 'Bridged'. this gave Kali its own IP address directly from my home router rather than sitting behind a private virtual network. 
 
 ### 3. Host Discovery (home network)
-```
-nmap -sn 192.168.0.0/24
-```
+I then ran another ping sweep: nmap -sn 192.xxx.x.0/24
 
-This performs an **ARP-based ping sweep** across the local subnet. Because ARP (Address Resolution Protocol) operates at Layer 2 and is essential to basic network function, it reliably reveals live hosts even when devices block ICMP ping. The scan identified 20 live devices, each returning a MAC address whose vendor prefix (OUI) could be matched to a manufacturer (e.g., Apple, Amazon, Samsung, Ring, Microsoft).
-
-*Note: device hostnames and MAC addresses have been redacted/generalised from this write-up to protect household privacy.*
+This performs an ARP-based ping sweep across the local subnet. Because ARP (Address Resolution Protocol) operates at Layer 2, it reveals live hosts even when devices block ICMP ping. The scan identified 20 live devices, each returning a MAC address whose vendor prefix (OUI) could be matched to a manufacturer.
 
 ### 4. Service & Version Detection
-Selected the router as the most interesting target and ran:
+I Selected the router as the most interesting target and ran: nmap -sV 192.xxx.x.x
 
-```
-nmap -sV 192.168.0.1
-```
-
-This performs a full port scan followed by service/version fingerprinting on any open ports.
+This performed a full port scan.
 
 ## Findings
 
