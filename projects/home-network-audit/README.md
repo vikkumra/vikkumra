@@ -1,7 +1,7 @@
 # Home Network Reconnaissance Lab
 
 ## Overview
-As part of building foundational cybersecurity skills ahead of applying for apprenticeships, I set up a Kali Linux virtual machine and used it to practise core network reconnaissance techniques — first in an isolated lab network, then against my own home network (with full authorisation, as the network owner).
+I set up a Kali Linux virtual machine and used it to practise core network reconnaissance techniques — first in an isolated lab network, then against my own home network (with full authorisation, as the network owner).
 
 ## Environment
 - **Hypervisor:** VMware Fusion Pro (Apple Silicon)
