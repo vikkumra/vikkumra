@@ -46,9 +46,6 @@ This combined the original query with a new one, the result revealed real userna
 ## Step 5: Cracking the password hash
 The password wasn't stored as plain text, it was hashed. I used John the Ripper on Kali to crack it:
 
-john --format=raw-md5 hash.txt
-john --show --format=raw-md5 hash.txt
-
 ![john the ripper](photo-jacktheripper)
 
 John cracked it and revealed the password as **"password"**.
