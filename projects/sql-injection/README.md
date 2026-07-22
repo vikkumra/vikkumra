@@ -38,6 +38,8 @@ It errored at 3, which means the query only uses 2 columns.
 ## Step 4: Extracting real credentials
 Using that information, I ran **1' UNION SELECT user, password FROM users-- -**
 
+![union injection](photo-unionresponse)
+
 This combined the original query with a new one, the result revealed real usernames and password hashes, including
 **admin:5f4dcc3b5aa765d61d8327deb882cf99**
 
