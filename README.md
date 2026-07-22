@@ -2,7 +2,7 @@
 I'm an aspiring cybersecurity professional, focusing on building practical skills ahead of my apprenticeship applications. Below are projects documenting what ive learned so far.
 
 ## Projects
-- [sql injection](projects/sql-injection/README.md)
+- [SQL Injection](projects/sql-injection/README.md)
 - [Home Network Audit Lab](projects/home-network-audit/README.md)
 
 ## Certifications
