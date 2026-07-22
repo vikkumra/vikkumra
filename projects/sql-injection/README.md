@@ -23,7 +23,7 @@ Searching **1'** (adding a quote) caused a **500 Internal Server Error**. This s
 ## Step 2: Bypassing the query's logic
 I then tried **1' OR '1'='1**
 
-This returned **every user in the database**, not just user 1. This works because `'1'='1'` is always true, so the database ended up matching every row instead of just one.
+This returned every user in the database, not just user 1. This works because **'1'='1'** is always true, so the database ended up matching every row instead of just one.
 
 ![injection Response](photo-injectionresponse)
 
