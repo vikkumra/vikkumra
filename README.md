@@ -3,6 +3,7 @@ I'm an aspiring cybersecurity professional, focusing on building practical skill
 
 ## Projects
 - [Home Network Audit Lab](projects/home-network-audit/README.md)
+- [sql injection](projects/sql-injection/README.md)
 
 ## Certifications
 - Completed the Google Cybersecurity Certifiaction
