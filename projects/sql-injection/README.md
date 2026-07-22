@@ -16,16 +16,16 @@ Searching **1** returned one normal result, as expected.
 
 ![1 Response](photo-1response)
 
-Searching **1'** (adding a quote) caused a **500 Internal Server Error**. This shows the input isn't being handled properly, the extra quote broke the database query behind the scenes.
+Searching **1'** (adding a quote) caused a **500 Internal Server Error**. This shows the input isn't being handled properly, the extra quote broke the database query behind the scenes in sql.
 
-![1 Response](photo-servererror)
+![500 internal error](photo-servererror)
 
 ## Step 2: Bypassing the query's logic
-I then tried:
-```
-1' OR '1'='1
-```
+I then tried **1' OR '1'='1**
+
 This returned **every user in the database**, not just user 1. This works because `'1'='1'` is always true, so the database ended up matching every row instead of just one.
+
+![injection Response](photo-injectionresponse)
 
 ## Step 3: Finding the number of columns
 Before pulling data from another table, I needed to know how many columns the original query used. I tested:
