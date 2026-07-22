@@ -1,5 +1,5 @@
-# 💫 About Me:
-I'm an aspiring cybersecurity professional, focusing on building practical skills ahead of my apprenticeship applications. Below are projects documenting what ive learned so far.
+# 🔴About Vik:
+I'm an aspiring cybersecurity professional, focusing on building practical skills and building my knowlege to prepare for my apprenticeship applications. Below are projects documenting what ive learned so far. Check them out!
 
 ## Projects
 - [SQL Injection](projects/sql-injection/README.md)
