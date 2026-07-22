@@ -2,7 +2,7 @@
 # SQL Injection
 
 ## What I did
-I built a small home lab using two virtual machines — a Kali Linux "attacker" machine and an Ubuntu Server "target" machine running DVWA (Damn Vulnerable Web Application). I used these VMs to learn how to do a SQl injection and a a UNION-based SQL Injection, obtain hashed passwords, and then used 'John the Ripper' to figure out the password from the hash.
+I built a small home lab using two virtual machines — a Kali Linux "attacker" machine and an Ubuntu Server "target" machine running DVWA (Damn Vulnerable Web Application). I used these VMs to learn how to do a SQL injection and a a UNION-based SQL Injection, obtain hashed passwords, and then used 'John the Ripper' to figure out the password from the hash.
 
 - **Attacker VM:** Kali Linux
 - **Target VM:** Ubuntu Server running Apache, PHP, MySQL, and DVWA
