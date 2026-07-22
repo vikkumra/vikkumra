@@ -1,21 +1,20 @@
 
-# DVWA SQL Injection Lab
+# SQL Injection Lab
 
 ## What I did
-I built a small home lab using two virtual machines — a Kali Linux "attacker" machine and an Ubuntu Server "target" machine running DVWA (Damn Vulnerable Web Application). I used this to practise finding and exploiting a SQL injection vulnerability, then cracked a password hash I found along the way.
+I built a small home lab using two virtual machines — a Kali Linux "attacker" machine and an Ubuntu Server "target" machine running DVWA (Damn Vulnerable Web Application). I used these VMs to learn how to do a SQl injection and a a UNION-based SQL Injection, obtain hashed passwords, and then used 'Jack the Ripper' to figure out the password from the hash.
 
-## Environment
 - **Attacker VM:** Kali Linux
 - **Target VM:** Ubuntu Server running Apache, PHP, MySQL, and DVWA
-- **Network:** Both VMs on the same private (NAT) network, isolated from my real home network
+- **Network:** Both VMs on the same private (NAT) network, seperate from my real home network
 - **Difficulty setting:** DVWA set to "Low"
 
 ## Step 1: Testing for the vulnerability
-DVWA's SQL Injection page has a simple "User ID" search box that looks up a user's name.
+DVWA's SQL Injection page has a "User ID" search box that looks up a user's name.
 
-Searching `1` returned one normal result, as expected.
+Searching **1** returned one normal result, as expected.
 
-Searching `1'` (just adding a single quote) caused a **500 Internal Server Error**. This is a good sign that the input isn't being handled safely — the extra quote broke the database query behind the scenes.
+Searching **1'** (adding a quote) caused a **500 Internal Server Error**. This shows the input isn't being handled properly, the extra quote broke the database query behind the scenes.
 
 ## Step 2: Bypassing the query's logic
 I then tried:
