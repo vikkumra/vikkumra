@@ -18,6 +18,8 @@ Searching **1** returned one normal result, as expected.
 
 Searching **1'** (adding a quote) caused a **500 Internal Server Error**. This shows the input isn't being handled properly, the extra quote broke the database query behind the scenes.
 
+![1 Response](photo-servererror)
+
 ## Step 2: Bypassing the query's logic
 I then tried:
 ```
