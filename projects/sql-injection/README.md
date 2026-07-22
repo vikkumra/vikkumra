@@ -50,28 +50,16 @@ john --show --format=raw-md5 hash.txt
 
 ![john the ripper](photo-jacktheripper)
 
-John cracked it almost instantly, revealing the original password: **"password"**.
+John cracked it and revealed the password as **"password"**.
 
 ## Why this happened
-The website took whatever I typed into the search box and glued it directly into a database command, without checking it first. This let me change what the query actually did, instead of just searching for a normal ID.
+The website took what I typed into the search box and entered it directly into a database command, without checking it first. This let me change what the query actually did, instead of just searching for a normal ID.
 
-## Why it matters
-If this were a real system, this exact technique could let someone:
-- Bypass a login without knowing a real password
-- Steal usernames and password hashes from a database
-- In more serious cases, access or modify other data on the server
-
-The fact that the hash cracked instantly is also a useful finding on its own — even if passwords are hashed, a weak password like "password" makes that protection meaningless.
-
-## How this would be fixed in a real system
-- Use **parameterized queries** (also called prepared statements), which keep user input strictly separate from the actual database command, so it can never be treated as part of the query itself
-- Validate and filter user input before using it
-- Store passwords using a modern, slow hashing algorithm like **bcrypt** or **Argon2**, not MD5
-- Enforce stronger password policies so common/weak passwords aren't usable
+## How this would be fixed
+Use **parameterised queries**, which keep user input strictly separate from the actual database command, so it can't be treated as part of the query itself.
 
 ## What I learned
-- How SQL injection actually works, not just how to run the commands
-- How to test for a vulnerability step by step, rather than jumping straight to an exploit
-- What password hashing is, and why weak hashing algorithms and weak passwords are both separate risks
+- How a SQL injection works
+- What password hashing is
 - How to use John the Ripper to crack a hash
-- How to explain a technical vulnerability in plain terms, including its real-world impact and fix
+- The importance of using paramaterised queries 
