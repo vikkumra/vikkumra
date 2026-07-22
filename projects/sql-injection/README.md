@@ -2,7 +2,7 @@
 # SQL Injection Lab
 
 ## What I did
-I built a small home lab using two virtual machines — a Kali Linux "attacker" machine and an Ubuntu Server "target" machine running DVWA (Damn Vulnerable Web Application). I used these VMs to learn how to do a SQl injection and a a UNION-based SQL Injection, obtain hashed passwords, and then used 'Jack the Ripper' to figure out the password from the hash.
+I built a small home lab using two virtual machines — a Kali Linux "attacker" machine and an Ubuntu Server "target" machine running DVWA (Damn Vulnerable Web Application). I used these VMs to learn how to do a SQl injection and a a UNION-based SQL Injection, obtain hashed passwords, and then used 'John the Ripper' to figure out the password from the hash.
 
 - **Attacker VM:** Kali Linux
 - **Target VM:** Ubuntu Server running Apache, PHP, MySQL, and DVWA
@@ -28,31 +28,28 @@ This returned every user in the database, not just user 1. This works because **
 ![injection Response](photo-injectionresponse)
 
 ## Step 3: Finding the number of columns
-Before pulling data from another table, I needed to know how many columns the original query used. I tested:
-```
-1' ORDER BY 1-- -
+Before pulling data from another table, I needed to know how many columns the original query used. I tested: 
+**1' ORDER BY 1-- - 
 1' ORDER BY 2-- -
-1' ORDER BY 3-- -
-```
-It errored at 3, confirming the query only uses **2 columns**.
+1' ORDER BY 3-- -**
+
+It errored at 3, which means the query only uses 2 columns.
 
 ## Step 4: Extracting real credentials
-Using that information, I ran:
-```
-1' UNION SELECT user, password FROM users-- -
-```
-This combined the original query with a new one, pulling data straight out of the `users` table — a table the page was never designed to show. The result revealed real usernames and password hashes, including:
-```
-admin : 5f4dcc3b5aa765d61d8327deb882cf99
-```
+Using that information, I ran **1' UNION SELECT user, password FROM users-- -**
+
+This combined the original query with a new one, the result revealed real usernames and password hashes, including
+**admin:5f4dcc3b5aa765d61d8327deb882cf99**
 
 ## Step 5: Cracking the password hash
-The password wasn't stored as plain text — it was hashed using MD5, an older hashing algorithm. I used **John the Ripper** on Kali to crack it:
-```
+The password wasn't stored as plain text, it was hashed. I used John the Ripper on Kali to crack it:
+
 echo '5f4dcc3b5aa765d61d8327deb882cf99' > hash.txt
 john --format=raw-md5 hash.txt
 john --show --format=raw-md5 hash.txt
-```
+
+![john the ripper](photo-jacktheripper)
+
 John cracked it almost instantly, revealing the original password: **"password"**.
 
 ## Why this happened
