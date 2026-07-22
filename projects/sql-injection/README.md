@@ -14,6 +14,8 @@ DVWA's SQL Injection page has a "User ID" search box that looks up a user's name
 
 Searching **1** returned one normal result, as expected.
 
+![1 Response](photo-1response)
+
 Searching **1'** (adding a quote) caused a **500 Internal Server Error**. This shows the input isn't being handled properly, the extra quote broke the database query behind the scenes.
 
 ## Step 2: Bypassing the query's logic
