@@ -17,18 +17,12 @@ I edited the "[sshd]" section to look like this:
 
 - **enabled = true** — turns on protection for SSH specifically
 - **maxretry = 3** — allow 3 failed login attempts before taking action
-- **bantime = 600** — once banned, block that IP for 600 seconds (10 minutes)
-
-Then I restarted the service:
-```
-sudo systemctl restart fail2ban
-sudo systemctl enable fail2ban
-```
+- **bantime = 600** — once banned, blocks that IP for 600 seconds 
 
 ## Step 2: Confirming it was running, before any attempts
-```
-sudo fail2ban-client status sshd
-```
+
+![show fail2ban was working](photo-banempty)
+
 This showed `Currently failed: 0` and `Currently banned: 0` — confirming the jail was active and watching, but hadn't seen anything yet.
 
 ## Step 3: Simulating a brute-force attempt
