@@ -44,14 +44,12 @@ Back on the Ubuntu VM, I checked Fail2ban's status again:
 
 ![ban proof](photo-banproof)
 
-This confirmed Fail2ban had correctly detected the 3 failed attempts and blocked my Kali VM's IP address, exactly as configured.
+This confirmed Fail2ban had detected the 3 failed attempts and blocked my Kali VM's IP address, exactly as configured.
 
 ## Why this matters
-In a real environment, this kind of protection stops (or seriously slows down) an attacker trying to guess passwords over SSH. Without something like Fail2ban, an attacker could attempt thousands of password combinations uninterrupted. With it in place, they're automatically locked out after a small number of failures, giving them far less chance of success and giving defenders time to notice and respond.
+In a real situation, Fail2ban would help prevent brute-force attacks and blocks to user out from the server. Although brute-force attacks are less common today, this is still an essential part of sercurity.
 
 ## What I learned
-- The difference between attacking a system (previous project) and defending one (this project)
 - What a brute-force attack is and why SSH is a common target
-- How Fail2ban reads logs, detects patterns, and reacts using the firewall
-- How to configure a real security tool's settings, rather than just installing it
-- How to actually test and prove a security control works, instead of assuming it does
+- How to configure a real security tool's settings
+- How to actually test and prove a security control works
