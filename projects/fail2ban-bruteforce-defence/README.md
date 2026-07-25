@@ -15,9 +15,9 @@ I edited the "[sshd]" section to look like this:
 
 ![SSHD edit](photo-sshconfirmation)
 
-- **enabled = true** — turns on protection for SSH specifically
-- **maxretry = 3** — allow 3 failed login attempts before taking action
-- **bantime = 600** — once banned, blocks that IP for 600 seconds 
+- enabled = tru — turns on protection for SSH specifically
+- maxretry = 3 — allow 3 failed login attempts before taking action
+- bantime = 600 — once banned, blocks that IP for 600 seconds 
 
 ## Step 2: Confirming it was running, before any attempts
 
