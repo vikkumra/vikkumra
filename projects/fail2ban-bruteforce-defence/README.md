@@ -23,13 +23,13 @@ I edited the "[sshd]" section to look like this:
 
 ![show fail2ban was working](photo-banempty)
 
-This showed `Currently failed: 0` and `Currently banned: 0` — confirming the jail was active and watching, but hadn't seen anything yet.
+This confirmed the jail was up and working and rightly hadn't detected any attempts to login yet.
 
 ## Step 3: Simulating a brute-force attempt
 From Kali, I deliberately tried to SSH into the target using a fake username and wrong passwords, three times in a row:
-```
-ssh -o StrictHostKeyChecking=no fakeuser@192.168.93.130
-```
+
+![failed attempts](photo-2failedattempts)
+
 Each of the first 3 attempts failed normally with `Permission denied`, since the ban limit hadn't been reached yet.
 
 ## Step 4: Triggering the ban
