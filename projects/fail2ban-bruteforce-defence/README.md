@@ -2,25 +2,17 @@
 # Fail2ban — Blocking SSH Brute-Force Attempts
 
 ## What I did
-For this project I switched from attacking to defending. I set up **Fail2ban** on my Ubuntu Server VM to automatically detect and block repeated failed SSH login attempts (a common real-world attack called a brute-force attack), then tested it myself from my Kali VM to prove it actually works.
+For this project I set up Fail2ban on my Ubuntu Server VM to automatically detect and block repeated failed SSH login attempts, then tested it myself from my Kali VM to simulate a brute force attack and prove it actually works.
 
-## Environment
-- **Target VM:** Ubuntu Server, running Fail2ban
-- **Attacker VM:** Kali Linux
-- **Network:** Both VMs on the same private (NAT) network
-
-## What is SSH, and why protect it?
-SSH lets you securely log into and control another computer remotely. It's one of the most common services attackers target, often by trying huge numbers of password guesses very quickly — this is called a **brute-force attack**.
-
-## What is Fail2ban?
-Fail2ban works like a bouncer watching a door. It doesn't stop people from trying to log in, but it watches the login logs, and if it sees too many failed attempts from the same IP address in a short time, it automatically blocks that IP using the server's firewall.
+- **Target VM:** Ubuntu Server, running Fail2ban.
+- **Attacker VM:** Kali Linux.
+- **Network:** Both VMs on the same private NAT network.
 
 ## Step 1: Installing and configuring Fail2ban
-```
+
 sudo apt install fail2ban -y
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo nano /etc/fail2ban/jail.local
-```
 
 I edited the `[sshd]` section to look like this:
 ```
