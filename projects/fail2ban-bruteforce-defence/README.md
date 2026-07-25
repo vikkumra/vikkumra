@@ -12,12 +12,8 @@ For this project I set up Fail2ban on my Ubuntu Server VM to automatically detec
 i began by installing fail2ban on the target Ubuntu VM.
 
 I edited the "[sshd]" section to look like this:
-```
-[sshd]
-enabled = true
-maxretry = 3
-bantime = 600
-```
+
+![SSHD edit](photo-sshconfirmation)
 
 - **enabled = true** — turns on protection for SSH specifically
 - **maxretry = 3** — allow 3 failed login attempts before taking action
