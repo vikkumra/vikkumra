@@ -26,7 +26,7 @@ I edited the "[sshd]" section to look like this:
 This confirmed the jail was up and working and rightly hadn't detected any attempts to login yet.
 
 ## Step 3: Simulating a brute-force attempt
-From Kali, I deliberately tried to SSH into the target using a fake username and wrong passwords, three times in a row:
+From Kali, I deliberately tried to SSH into the target using a fake username and wrong passwords, three times in a row.
 
 ![failed attempts](photo-2failedattempts)
 
@@ -34,9 +34,9 @@ Each of the first 3 attempts failed normally with `Permission denied`, since the
 
 ## Step 4: Triggering the ban
 On the 4th attempt, instead of even being asked for a password, I got:
-```
-ssh: connect to host 192.168.93.130 port 22: Connection refused
-```
+
+![connection refused](photo-connectionrefused)
+
 This showed my Kali machine had been blocked entirely before it could try again.
 
 ## Step 5: Confirming the ban
