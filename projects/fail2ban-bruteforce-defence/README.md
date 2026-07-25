@@ -33,23 +33,17 @@ From Kali, I deliberately tried to SSH into the target using a fake username and
 Each of the first 3 attempts failed normally with `Permission denied`, since the ban limit hadn't been reached yet.
 
 ## Step 4: Triggering the ban
-On the 4th attempt, instead of even being asked for a password, I got:
+On the 4th attempt, instead of even being asked for a password, I got "connection refused".
 
 ![connection refused](photo-connectionrefused)
 
-This showed my Kali machine had been blocked entirely before it could try again.
+This showed my Kali machine had been blocked before it could try again.
 
 ## Step 5: Confirming the ban
 Back on the Ubuntu VM, I checked Fail2ban's status again:
-```
-sudo fail2ban-client status sshd
-```
-This time it showed:
-```
-Total failed: 3
-Currently banned: 1
-Banned IP list: 192.168.93.128
-```
+
+![ban proof](photo-banproof)
+
 This confirmed Fail2ban had correctly detected the 3 failed attempts and blocked my Kali VM's IP address, exactly as configured.
 
 ## Why this matters
