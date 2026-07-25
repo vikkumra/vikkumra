@@ -3,6 +3,7 @@ I'm an aspiring cybersecurity professional, focusing on building practical skill
 
 ## Projects
 - [SQL Injection](projects/sql-injection/README.md)
+- [Fail2ban Brute-Force Blocker](projects/fail2ban-bruteforce-defence/README.md)
 - [Home Network Audit Lab](projects/home-network-audit/README.md)
 
 ## Certifications
