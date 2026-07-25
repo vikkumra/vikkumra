@@ -8,13 +8,10 @@ For this project I set up Fail2ban on my Ubuntu Server VM to automatically detec
 - **Attacker VM:** Kali Linux.
 - **Network:** Both VMs on the same private NAT network.
 
-## Step 1: Installing and configuring Fail2ban
+## Step 1
+i began by installing fail2ban on the target Ubuntu VM.
 
-sudo apt install fail2ban -y
-sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-sudo nano /etc/fail2ban/jail.local
-
-I edited the `[sshd]` section to look like this:
+I edited the "[sshd]" section to look like this:
 ```
 [sshd]
 enabled = true
